@@ -25,14 +25,6 @@ echo "...done"
 
 # Move old dotfiles and create links
 
-# zshrc
-mv ~/.zshrc $olddir
-ln -s $dir/zshrc ~/.zshrc 
-
-# oh-my-zsh
-mv ~/.oh-my-zsh $olddir
-ln -s $dir/oh-my-zsh ~/.oh-my-zsh 
-
 # emacs
 mv ~/.emacs $olddir
 mv ~/.emacs.d $olddir
@@ -43,10 +35,18 @@ ln -s $dir/emacs.d ~/.emacs.d
 mv ~/.i3 $olddir
 ln -s $dir/i3 ~/.i3
 
-# ranger
-mv ~/.config/ranger $olddir
-ln -s $dir/config/ranger ~/.config/ranger
-
 # mpv
 mv ~/.config/mpv $olddir
-ln -s $dir/config/mpv ~/.config/mpv
+ln -s $dir/mpv ~/.config/mpv
+
+# oh-my-zsh
+mv ~/.oh-my-zsh $olddir
+ln -s $dir/oh-my-zsh ~/.oh-my-zsh 
+
+# ranger
+mv ~/.config/ranger $olddir
+ln -s $dir/ranger ~/.config/ranger
+
+# zshrc 
+mv ~/.zshrc $olddir
+ln -s $dir/zshrc ~/.zshrc 

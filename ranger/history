@@ -1,0 +1,12 @@
+shell mkdir game
+rename [Coalgirls]_Tokyo_Ghoul_NCED1a_(1920x1080_Blu-ray_FLAC)_[23319A8D].mkv
+emacs
+open_with emacs -nw
+cd  ..
+shell mkdir temp
+shell 
+open_with 
+open_with
+delete
+open_with emacs
+
