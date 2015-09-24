@@ -44,7 +44,7 @@
   "Dark color theme adapted from JD Huntington's TextMate Blackboard theme by Andre Richter.
   See https://github.com/andre-richter/emacs-lush-theme")
 
-(let* ((lush/background "#101010")
+(let* ((lush/background "#0C0C0C")
        (lush/foreground "#E0E0E0")
        (lush/turquoise  "#2AA198")
        (lush/orange     "#FF951B")
