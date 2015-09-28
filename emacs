@@ -12,6 +12,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Set emacs theme
 (load-file "~/.emacs.d/themes/lush-theme.el")
 (lush-theme)
 
@@ -29,9 +30,6 @@
           `((".*" . ,temporary-file-directory)))
     (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
-
-;; Use Win-key as meta
-(setq x-super-keysym 'meta)
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -75,11 +73,9 @@
 (when (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
 
+;; Indentation
 (setq-default c-basic-offset 4 c-default-style "linux")
 (setq-default tab-width 4 indent-tabs-mode t)
-
-(add-hook 'python-mode-hook '(lambda () 
- (setq python-indent 2)))
 
 ;; Quicker yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -96,5 +92,6 @@
 ;; Global line numbering
 (global-linum-mode t)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; Syntax checking
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))

@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,6 +32,9 @@ floating_modifier $mod
 # Border styles for new windows
 new_window pixel 1
 new_float pixel 1
+
+# Hide borders against screen edge
+hide_edge_borders none
 
 # start a terminal
 bindsym $mod+Shift+Return exec i3-sensible-terminal
@@ -146,8 +149,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # next/previous workspace
-bindsym Mod4+Tab workspace next
-bindsym Mod4+Shift+Tab workspace prev
+# bindsym Mod1+Tab workspace next
+# bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
 # reload the configuration file
@@ -205,17 +208,34 @@ bar {
         status_command i3status
 
 		colors {
-            background #0C0C0C
+            background #000000
             statusline #CCCCCC
 
-            focused_workspace  #FFFFFF #285577
-            active_workspace   #CCCCCC #333333
-            inactive_workspace #888888 #111111
+            focused_workspace  #1693A5 #1693A5 #000000
+            active_workspace   #333333 #333333 #CCCCCC 
+            inactive_workspace #000000 #000000 #AAAAAA
             urgent_workspace   #FFFFFF #900000
         }
 
+		#colors {
+        #    background #0C0C0C
+        #    statusline #CCCCCC
+		#	
+        #    focused_workspace  #FFFFFF #285577
+        #    active_workspace   #CCCCCC #333333
+        #    inactive_workspace #888888 #111111
+        #    urgent_workspace   #FFFFFF #900000
+        #}
 
 }
+
+# i3 colors
+# class                 border  backgr. text    indicator
+client.focused          #4C7899 #1693A5 #FFFFFF #2E9EF4
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50
+client.unfocused        #333333 #222222 #888888 #292D2E
+client.urgent           #2F343A #900000 #FFFFFF #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000
 
 ## Autostart section
 exec pulseaudio --start
