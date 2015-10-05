@@ -39,10 +39,6 @@ ln -s $dir/i3 ~/.i3
 mv ~/.config/mpv $olddir
 ln -s $dir/mpv ~/.config/mpv
 
-# oh-my-zsh
-mv ~/.oh-my-zsh $olddir
-ln -s $dir/oh-my-zsh ~/.oh-my-zsh 
-
 # ranger
 mv ~/.config/ranger $olddir
 ln -s $dir/ranger ~/.config/ranger
