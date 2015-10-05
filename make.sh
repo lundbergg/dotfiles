@@ -50,3 +50,7 @@ ln -s $dir/ranger ~/.config/ranger
 # zshrc 
 mv ~/.zshrc $olddir
 ln -s $dir/zshrc ~/.zshrc 
+
+# Xdefaults
+mv ~/.Xdefaults $olddir
+ln -s $dir/Xdefaults ~/.Xdefaults
