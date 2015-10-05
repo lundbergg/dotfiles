@@ -31,6 +31,10 @@
     (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
 
+;; Switch super and meta
+(setq x-meta-keysym 'super)
+(setq x-super-keysym 'meta)
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -95,3 +99,4 @@
 ;; Syntax checking
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
+(put 'upcase-region 'disabled nil)
