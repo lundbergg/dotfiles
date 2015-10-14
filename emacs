@@ -60,8 +60,8 @@
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (set-face-attribute 'default nil
-                      :family "DejaVu Sans Mono"
-                      :height 90
+                      :family "Source Code Pro"
+                      :height 85
                       :weight 'normal
                       :width 'normal)
 
@@ -100,3 +100,10 @@
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
 (put 'upcase-region 'disabled nil)
+
+;; Remove ^M
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
