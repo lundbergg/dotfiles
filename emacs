@@ -107,3 +107,7 @@
   (interactive)
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
+
+;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)

@@ -89,10 +89,9 @@ alias mv='timeout 8 mv -iv'
 alias rm='timeout 3 rm -Iv --one-file-system'
 alias df='df -h'
 alias c='clear'
-alias i3lock='i3lock -c 000000'
+alias i3lock='i3lock -d -c 000000'
 alias feh='feh -Zp.'
-alias japwine='LANG=ja_JP.utf8 wine'
-alias zshrc='emacs ~/.zshrc &'
+alias pmc='sudo pacman -Rsn $(pacman -Qdtq)'
 
 # ls colors
 # eval $(dircolors -b $HOME/.dircolors)
