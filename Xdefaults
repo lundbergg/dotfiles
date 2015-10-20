@@ -1,8 +1,10 @@
 ! urxvt
 
 URxvt*geometry:		115x40
-URxvt*font:			xft:DejaVu Sans Mono:pixelsize=11:antialias=true:hinting=true
-URxvt*boldFont: 	xft:DejaVu Sans Mono:bold:pixelsize=11:antialias=false:hinting=true
+URxvt*font:			xft:Source Code Pro:pixelsize=11:antialias=true:hinting=true
+URxvt*boldFont: 	xft:Source Code Pro:bold:pixelsize=11:antialias=false:hinting=true
+!URxvt*font:			xft:DejaVu Sans Mono:pixelsize=11:antialias=true:hinting=true
+!URxvt*boldFont: 	xft:DejaVu Sans Mono:bold:pixelsize=11:antialias=false:hinting=true
 URxvt*depth:   		24
 URxvt*borderless: 	1
 URxvt*scrollBar:   	false

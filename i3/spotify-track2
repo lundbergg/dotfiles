@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import gi
+gi.require_version('Playerctl', '1.0')
+from gi.repository import Playerctl
+
+player = Playerctl.Player()
+
+track_info = '{artist} - {title}'.format(artist=player.get_artist(), title=player.get_title())
+print(track_info)
+
