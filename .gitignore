@@ -3,3 +3,6 @@ history
 elpa/
 auto-save-list/
 idlwave/
+
+smex-items
+ac-comphist.dat

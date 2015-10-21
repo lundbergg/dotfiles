@@ -97,9 +97,12 @@
 (global-linum-mode t)
 
 ;; Syntax checking
-;;(add-hook 'after-init-hook #'global-flycheck-mode)
+(global-set-key [f9] 'flycheck-mode)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
 (put 'upcase-region 'disabled nil)
+
+;; Speedbar
+(global-set-key [f8] 'speedbar)
 
 ;; Remove ^M
 (defun remove-dos-eol ()
@@ -108,6 +111,9 @@
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
 
-;; neotree
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+;; Auto complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+(global-auto-complete-mode 0)
+(global-set-key [f10] 'auto-complete-mode)
