@@ -5,7 +5,7 @@ export ZSH=/home/dennis/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+ZSH_THEME="nebirhos"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +49,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python)
+plugins=()
 
 # User configuration
 
@@ -89,10 +89,8 @@ alias mv='timeout 8 mv -iv'
 alias rm='timeout 3 rm -Iv --one-file-system'
 alias df='df -h'
 alias c='clear'
-alias i3lock='i3lock -c 000000'
+alias i3lock='i3lock -d -c 000000'
 alias feh='feh -Zp.'
-alias japwine='LANG=ja_JP.utf8 wine'
-alias zshrc='emacs ~/.zshrc &'
 
 # ls colors
 # eval $(dircolors -b $HOME/.dircolors)
