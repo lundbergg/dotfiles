@@ -53,7 +53,7 @@ plugins=()
 
 # User configuration
 
-export PATH="/usr/lib/hardening-wrapper/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="$HOME/.bin:/usr/lib/hardening-wrapper/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -90,7 +90,7 @@ alias rm='timeout 3 rm -Iv --one-file-system'
 alias df='df -h'
 alias c='clear'
 alias i3lock='i3lock -d -c 000000'
-alias feh='feh -Zp.'
+alias feh='feh -Zp. -B black'
 
 # ls colors
 # eval $(dircolors -b $HOME/.dircolors)
