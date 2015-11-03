@@ -100,3 +100,10 @@
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
 (put 'upcase-region 'disabled nil)
+
+;; CTRL arrow keys
+(define-key input-decode-map "\e[1;5A" [C-up])
+(define-key input-decode-map "\e[1;5B" [C-down])
+(define-key input-decode-map "\e[1;5C" [C-right])
+(define-key input-decode-map "\e[1;5D" [C-left])
+
