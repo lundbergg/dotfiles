@@ -92,6 +92,7 @@ alias c='clear'
 alias i3lock='i3lock -d -c 000000'
 alias feh='feh -Zp.'
 alias pmc='sudo pacman -Rsn $(pacman -Qdtq)'
+alias gitm='git log --graph --pretty=oneline --abbrev-commit'
 
 # ls colors
 # eval $(dircolors -b $HOME/.dircolors)
