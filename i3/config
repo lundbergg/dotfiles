@@ -210,12 +210,12 @@ bar {
 		font pango:Source Code Pro, 8
 
 		colors {
-            background #000000
-            statusline #CCCCCC
+            background #17181A
+            statusline #CECFD1
 
-            focused_workspace  #E84F4F #E84F4F #000000
-            active_workspace   #333333 #333333 #CCCCCC 
-            inactive_workspace #000000 #000000 #AAAAAA
+            focused_workspace  #E84F4F #E84F4F #000000 
+            active_workspace   #333333 #333333 #CECFD1 
+            inactive_workspace #17181A #17181A #AAAAAA
             urgent_workspace   #FFFFFF #900000
         }
 

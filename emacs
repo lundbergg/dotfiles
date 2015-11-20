@@ -3,8 +3,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
- )
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(column-number-mode t)
+ '(custom-enabled-themes (quote (wombat)))
+ '(custom-safe-themes
+   (quote
+	("77a502aa646ff236e436778839b099e3cc591056096ba279870be5ac594d1fd2" "3625c04fa4b8a802e96922d2db3f48c9cb2f93526e1dc24ba0b400e4ee4ccd8a" default)))
+ '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -13,8 +19,8 @@
  )
 
 ;; Set emacs theme
-(load-file "~/.emacs.d/themes/lush-theme.el")
-(lush-theme)
+;;(load-file "~/.emacs.d/themes/lush-theme.el")
+;;(lush-theme)
 
 ;; Save backups in ~/.saves
 (setq
@@ -103,6 +109,9 @@
 
 ;; Speedbar
 (global-set-key [f8] 'speedbar)
+
+;; Fill column indicator
+(require 'fill-column-indicator)
 
 ;; Remove ^M
 (defun remove-dos-eol ()

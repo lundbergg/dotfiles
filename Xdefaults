@@ -7,7 +7,7 @@ URxvt*boldFont: 	xft:DejaVu Sans Mono:bold:pixelsize=11:antialias=false:hinting=
 URxvt*borderless: 	1
 URxvt*scrollBar:   	false
 URxvt*saveLines:  	2000
-URxvt.transparent:  true
+URxvt.transparent:  false
 URxvt*.shading: 	10
 
 ! Clickable URL's
@@ -32,8 +32,8 @@ URxvt.iso14755_52: false
 
 !urxvt color scheme:
 
-*foreground: #D7D0C7
-*background: #000000
+*foreground: #CECFD1
+*background: #17181A
 
 !black
 *color0:     #101010
