@@ -25,11 +25,13 @@ echo "...done"
 
 # Move old dotfiles and create links
 
+# spacemacs
+mv ~/.spacemacs $olddir
+ln -s $dir/spacemacs ~/.spacemacs
+
 # emacs
 mv ~/.emacs $olddir
-mv ~/.emacs.d $olddir
-ln -s $dir/emacs ~/.emacs 
-ln -s $dir/emacs.d ~/.emacs.d
+ln -s $dir/emacs ~/.emacs
 
 # i3
 mv ~/.i3 $olddir
@@ -43,9 +45,9 @@ ln -s $dir/mpv ~/.config/mpv
 mv ~/.config/ranger $olddir
 ln -s $dir/ranger ~/.config/ranger
 
-# zshrc 
+# zshrc
 mv ~/.zshrc $olddir
-ln -s $dir/zshrc ~/.zshrc 
+ln -s $dir/zshrc ~/.zshrc
 
 # Xdefaults
 mv ~/.Xdefaults $olddir
