@@ -33,6 +33,7 @@ values."
      latex
      syntax-checking
      version-control
+	 gnus
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -76,7 +77,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruber-darker
+   dotspacemacs-themes '(lush
+						 badwolf
+						 gruber-darker
 						 soft-stone
 						 )
    ;; If non nil the cursor color matches the state color.
@@ -198,8 +201,8 @@ layers configuration. You are free to put any user code."
 		 x-super-keysym 'meta)
 
   ;; Indentation
-  (setq-default c-basic-offset 4 c-default-style "linux")
-  (setq-default tab-width 4 indent-tabs-mode t)
+  (setq-default c-basic-offset 2 c-default-style "linux")
+  (setq-default tab-width 2 indent-tabs-mode t)
 
   ;; Move text bindings
   (global-set-key (kbd "<M-up>") 'move-text-up)
