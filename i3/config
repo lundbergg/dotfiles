@@ -43,7 +43,8 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run
+#bindsym $mod+p exec dmenu_run
+bindsym $mod+p exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -237,3 +238,4 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000
 ## Autostart section
 exec pulseaudio --start
 exec i3-msg workspace 1
+exec xrdb -load $HOME/.Xresources
