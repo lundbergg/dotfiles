@@ -215,12 +215,12 @@ bar {
 		font pango:Source Code Pro, 8
 
 		colors {
-            background #17181A
-            statusline #CECFD1
+            background #0C0C0C
+            statusline #FEFAFA
 
-            focused_workspace  #E84F4F #E84F4F #000000 
+            focused_workspace  #DCE9E3 #DCE9E3 #0C0C0C
             active_workspace   #333333 #333333 #CECFD1 
-            inactive_workspace #17181A #17181A #AAAAAA
+            inactive_workspace #0C0C0C #0C0C0C #FEFAFA
             urgent_workspace   #FFFFFF #900000
         }
 
@@ -228,7 +228,7 @@ bar {
 
 # i3 colors
 # class                 border  backgr. text    indicator
-client.focused          #4C7899 #E84F4F #FFFFFF #B1693F
+client.focused          #4C7899 #DCE9E3 #0C0C0C #5B6877
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50
 client.unfocused        #333333 #222222 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000

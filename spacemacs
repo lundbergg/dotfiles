@@ -77,7 +77,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(lush
+   dotspacemacs-themes '(darkokai
+						 lush
 						 badwolf
 						 gruber-darker
 						 soft-stone
@@ -189,12 +190,14 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (setq darkokai-mode-line-padding 1)
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+	;; (setq powerline-default-separator ')
 
   ;; Switch meta with super
   (setq  x-meta-keysym 'super
@@ -230,8 +233,12 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C"))))
+ '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#0C0C0C")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#0D0D0D"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(fringe ((t (:background "#0c0c0c" :foreground "#f8fbfc"))))
+ '(helm-ff-file ((t (:background "#0c0c0c" :foreground "#f8fbfc"))))
  '(helm-header ((t (:inherit header-line))))
- '(helm-selection ((t (:background "gray5" :underline nil)))))
+ '(helm-selection ((t (:background "gray14" :underline nil))))
+ '(hl-line ((t (:background "#1F1F1F"))))
+ '(org-agenda-structure ((t (:background "#0C0C0C" :foreground "#ffffff" :box nil :underline nil :slant normal :weight bold :height 1.1)))))

@@ -5,7 +5,7 @@ from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
 class Default(ColorScheme):
-    progress_bar_color = red
+    progress_bar_color = white
 
     def use(self, context):
         fg, bg, attr = default_colors
@@ -19,19 +19,20 @@ class Default(ColorScheme):
             else:
                 attr = normal
             if context.empty or context.error:
-                bg = red
+                bg = white
+                fg = black
             if context.border:
-                fg = red
+                fg = white
             if context.media:
                 if context.image:
                     fg = yellow
                 else:
                     fg = magenta
             if context.container:
-                fg = red
+                fg = white
             if context.directory:
                 attr |= bold
-                fg = red
+                fg = white
             elif context.executable and not \
                     any((context.media, context.container,
                         context.fifo, context.socket)):
@@ -70,9 +71,9 @@ class Default(ColorScheme):
         elif context.in_titlebar:
             attr |= bold
             if context.hostname:
-                fg = context.bad and red or green
+                fg = context.bad and red or white
             elif context.directory:
-                fg = red
+                fg = white
             elif context.tab:
                 if context.good:
                     bg = green
@@ -82,7 +83,7 @@ class Default(ColorScheme):
         elif context.in_statusbar:
             if context.permissions:
                 if context.good:
-                    fg = cyan
+                    fg = white
                 elif context.bad:
                     fg = magenta
             if context.marked:
