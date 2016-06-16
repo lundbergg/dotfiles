@@ -212,10 +212,16 @@ layers configuration. You are free to put any user code."
 
   ;; Org-mode todo faces for keywords.
   (setq org-todo-keyword-faces
-		'(("TODO" . org-warning)
-		  ("IN PROGRESS" . "yellow")))
+				'(("IN PROGRESS" . "deep sky blue")
+					("WAITING" . "orange")))
+
+	(setq org-refile-targets
+				'(("todo.org" :maxlevel . 2)
+					("refile.org" :maxlevel . 1)))
 
   )
+
+;; bg: #272822
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -224,10 +230,15 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Studie/org/school.org")))
+ '(ido-save-directory-list-file "/home/dennis/.emacs.d/.cache/ido.last")
+ '(org-agenda-files (quote ("todo.org" "refile.org")))
+ '(org-default-notes-file "refile.org")
+ '(org-directory "~/Documents/org")
  '(org-enforce-todo-dependencies t)
- '(org-todo-keywords (quote ((sequence "TODO" "IN PROGRESS" "DONE"))))
- '(paradox-github-token t))
+ '(org-todo-keywords (quote ((sequence "TODO" "IN PROGRESS" "WAITING" "DONE"))))
+ '(paradox-github-token t)
+ '(rmail-secondary-file-directory "~/")
+ '(url-configuration-directory "/home/dennis/.emacs.d/.cache/url/"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
