@@ -77,7 +77,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(darkokai
+		dotspacemacs-themes '(
 						 lush
 						 badwolf
 						 gruber-darker
@@ -87,7 +87,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Office Code Pro"
                                :size 12
                                :weight normal
                                :width normal
@@ -190,13 +190,16 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (setq darkokai-mode-line-padding 1)
+
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+	(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+	(load-file "~/.emacs.d/themes/doom.el")
+  (load-theme 'doom-dark t)
 	;; (setq powerline-default-separator ')
 
   ;; Switch meta with super
@@ -230,26 +233,42 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+	 ["#242728" "#ff0066" "#63de5d" "#E6DB74" "#06d8ff" "#ff8eff" "#53f2dc" "#f8fbfc"])
+ '(compilation-message-face (quote default))
+ '(custom-safe-themes
+	 (quote
+		("1a53efc62256480d5632c057d9e726b2e64714d871e23e43816735e1b85c144c" "6bc2bb2b8de7f68df77642b0615d40dc7850c2906b272d3f83a511f7195b07da" default)))
+ '(fci-rule-color "#424748" t)
+ '(highlight-changes-colors (quote ("#ff8eff" "#ab7eff")))
+ '(highlight-tail-colors
+	 (quote
+		(("#424748" . 0)
+		 ("#63de5d" . 20)
+		 ("#4BBEAE" . 30)
+		 ("#1DB4D0" . 50)
+		 ("#9A8F21" . 60)
+		 ("#A75B00" . 70)
+		 ("#F309DF" . 85)
+		 ("#424748" . 100))))
  '(ido-save-directory-list-file "/home/dennis/.emacs.d/.cache/ido.last")
+ '(magit-diff-use-overlays nil)
  '(org-agenda-files (quote ("todo.org" "refile.org")))
  '(org-default-notes-file "refile.org")
  '(org-directory "~/Documents/org")
  '(org-enforce-todo-dependencies t)
  '(org-todo-keywords (quote ((sequence "TODO" "IN PROGRESS" "WAITING" "DONE"))))
  '(paradox-github-token t)
+ '(pos-tip-background-color "#E6DB74")
+ '(pos-tip-foreground-color "#242728")
  '(rmail-secondary-file-directory "~/")
- '(url-configuration-directory "/home/dennis/.emacs.d/.cache/url/"))
+ '(url-configuration-directory "/home/dennis/.emacs.d/.cache/url/")
+ '(weechat-color-list
+	 (unspecified "#242728" "#424748" "#F70057" "#ff0066" "#86C30D" "#63de5d" "#BEB244" "#E6DB74" "#40CAE4" "#06d8ff" "#FF61FF" "#ff8eff" "#00b2ac" "#53f2dc" "#f8fbfc" "#ffffff")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#0C0C0C")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#0D0D0D"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(fringe ((t (:background "#0c0c0c" :foreground "#f8fbfc"))))
- '(helm-ff-file ((t (:background "#0c0c0c" :foreground "#f8fbfc"))))
- '(helm-header ((t (:inherit header-line))))
- '(helm-selection ((t (:background "gray14" :underline nil))))
- '(hl-line ((t (:background "#1F1F1F"))))
- '(org-agenda-structure ((t (:background "#0C0C0C" :foreground "#ffffff" :box nil :underline nil :slant normal :weight bold :height 1.1)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
