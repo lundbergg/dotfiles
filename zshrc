@@ -82,17 +82,18 @@ export VISUAL='emacsclient'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='ls --color=auto -pl'
+alias c='clear'
+alias df='df -h'
+alias feh='feh -Zp.'
+alias gitg='git log --graph --pretty=oneline --abbrev-commit'
 alias grep='grep --color=auto'
+# alias i3lock='i3lock -d -c 000000'
+alias ls='ls --color=auto -pl'
 alias mkdir='mkdir -p -v'
 alias mv='timeout 8 mv -iv'
-alias rm='timeout 3 rm -Iv --one-file-system'
-alias df='df -h'
-alias c='clear'
-alias i3lock='i3lock -d -c 000000'
-alias feh='feh -Zp.'
 alias pmc='sudo pacman -Rsn $(pacman -Qdtq)'
-alias gitg='git log --graph --pretty=oneline --abbrev-commit'
+alias rm='timeout 3 rm -Iv --one-file-system'
+alias x='chmod u+x'
 
 # ls colors
 # eval $(dircolors -b $HOME/.dircolors)

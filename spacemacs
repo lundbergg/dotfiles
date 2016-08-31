@@ -27,19 +27,20 @@ values."
      better-defaults
      emacs-lisp
      git
-     markdown
+		 markdown
      org
      colors
      latex
      syntax-checking
      version-control
-	 gnus
+		 spell-checking
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+	 '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -168,7 +169,7 @@ values."
    dotspacemacs-smooth-scrolling t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode t
+   dotspacemacs-smartparens-strict-mode nil
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -203,12 +204,13 @@ layers configuration. You are free to put any user code."
 	;; (setq powerline-default-separator ')
 
   ;; Switch meta with super
-  (setq  x-meta-keysym 'super
-		 x-super-keysym 'meta)
+  ;; (setq  x-meta-keysym 'super
+		 ;; x-super-keysym 'meta)
 
   ;; Indentation
   (setq-default c-basic-offset 2 c-default-style "linux")
-  (setq-default tab-width 2 indent-tabs-mode t)
+  (setq-default tab-width 2)
+	(setq-default indent-tabs-mode t)
 
   ;; Move text bindings
   (global-set-key (kbd "<M-up>") 'move-text-up)
