@@ -93,6 +93,7 @@ alias mkdir='mkdir -p -v'
 alias mv='timeout 8 mv -iv'
 alias pmc='sudo pacman -Rsn $(pacman -Qdtq)'
 alias rm='timeout 3 rm -Iv --one-file-system'
+alias savescreen='xrandr --output LVDS1 --off; xrandr --output LVDS1 --auto'
 alias x='chmod u+x'
 
 # ls colors

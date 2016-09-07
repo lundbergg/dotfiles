@@ -79,6 +79,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
 		dotspacemacs-themes '(
+						 default
 						 lush
 						 badwolf
 						 gruber-darker
@@ -200,20 +201,21 @@ user code."
 layers configuration. You are free to put any user code."
 	(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 	(load-file "~/.emacs.d/themes/doom.el")
-  (load-theme 'doom-dark t)
-	;; (setq powerline-default-separator ')
+  (load-theme 'doom-one t)
+	(setq doom-enable-bright-buffers nil)
+
 
   ;; Switch meta with super
   ;; (setq  x-meta-keysym 'super
 		 ;; x-super-keysym 'meta)
 
+	;; Disable current line highlight
+	(global-hl-line-mode -1)
+
   ;; Indentation
   (setq-default c-basic-offset 2 c-default-style "linux")
   (setq-default tab-width 2)
 	(setq-default indent-tabs-mode t)
-
-  ;; Move text bindings
-  (global-set-key (kbd "<M-up>") 'move-text-up)
 
   ;; Org-mode todo faces for keywords.
   (setq org-todo-keyword-faces
@@ -224,8 +226,25 @@ layers configuration. You are free to put any user code."
 				'(("todo.org" :maxlevel . 2)
 					("refile.org" :maxlevel . 1)))
 
-  )
+	;; (defun doom*neo-insert-fold-symbol (name)
+	;; 	"Custom hybrid unicode theme with leading whitespace."
+	;; 	(or (and (eq name 'open)  (neo-buffer--insert-with-face " - 📁  " 'neo-expand-btn-face))
+	;; 			(and (eq name 'close) (neo-buffer--insert-with-face " +  " 'neo-expand-btn-face))
+	;; 			(and (eq name 'leaf)  (neo-buffer--insert-with-face "   " 'neo-expand-btn-face))))
 
+	;; (advice-add 'neo-buffer--insert-fold-symbol :override 'doom*neo-insert-fold-symbol)
+	;; (advice-add 'neo-buffer--insert-root-entry :filter-args 'doom*neo-insert-root-entry)
+
+	(defun what-face (pos)
+    (interactive "d")
+    (let ((face (or (get-char-property (point) 'read-face-name)
+                    (get-char-property (point) 'face))))
+      (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
+	(setq powerline-default-separator nil)
+	(spaceline-compile)
+
+  )
 ;; bg: #272822
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -1,14 +1,14 @@
 ! urxvt
 
 URxvt*geometry:		115x40
-URxvt*font:			xft:Inconsolata:pixelsize=13:antialias=true:hinting=true
-URxvt*boldFont: 	xft:Inconsolata:bold:pixelsize=13:antialias=false:hinting=true
+URxvt*font:			xft:Office Code Pro:pixelsize=11:antialias=true:hinting=true
+URxvt*boldFont: 	xft:Office Code Pro:bold:pixelsize=11:antialias=false:hinting=true
 !URxvt*depth:   		32
 URxvt*borderless: 	1
 URxvt*scrollBar:   	false
-URxvt*saveLines:  	2000
+URxvt*saveLines:		2000
 URxvt.transparent:  false
-URxvt*.shading: 	10
+URxvt*.shading: 		10
 
 ! Clickable URL's
 URxvt.perl-ext-common: default,matcher
@@ -32,42 +32,42 @@ URxvt.iso14755_52: false
 
 !urxvt color scheme:
 
-*foreground: #FEFAFA
-*background: #0C0C0C
+*foreground: #FFFFFF
+*background: #222425
 
 ! black
-*.color0:       #151515
-*.color8:       #505050
+*.color0:       #000000
+*.color8:       #39393D
 
 ! red
-*.color1:       #ac4142
-*.color9:       #ac4142
+*.color1:       #E74C3C
+*.color9:       #E74C3C
 
 ! green
-*.color2:       #90a959
-*.color10:      #90a959
+*.color2:       #B6B20E
+*.color10:      #B6B20E
 
 ! yellow
-*.color3:       #f4bf75
-*.color11:      #f4bf75
+*.color3:       #E2C770
+*.color11:      #E2C770
 
 ! blue
-*.color4:       #6a9fb5
-*.color12:      #6a9fb5
+*.color4:       #FD971F
+*.color12:      #FD971F
 
 ! magenta
-*.color5:       #aa759f
-*.color13:      #aa759f
+*.color5:       #F92672
+*.color13:      #F92672
 
 ! cyan
-*.color6:       #75b5aa
-*.color14:      #75b5aa
+*.color6:       #66D9EF
+*.color14:      #66D9EF
 
 ! white
-*.color7:       #d0d0d0
-*.color15:      #f5f5f5
+*.color7:       #EAEADB
+*.color15:      #EAEADB
 
 !URxvt*borderColor:        #151515
-URxvt*colorBD:            #ffffff
-URxvt*cursorColor:        #FF842A
-URxvt*cursorColor2:       #151515
+! URxvt*colorBD:            #ffffff
+URxvt*cursorColor:        #FD971F
+! URxvt*cursorColor2:       #151515
