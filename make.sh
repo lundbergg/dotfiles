@@ -52,3 +52,10 @@ ln -s $dir/zshrc ~/.zshrc
 # Xdefaults
 mv ~/.Xdefaults $olddir
 ln -s $dir/Xdefaults ~/.Xdefaults
+
+# bspwm
+mv ~/.config/bspwm $olddir
+ln -s $dir/bspwm ~/.config/bspwm
+
+mv ~/.config/sxhkd $olddir
+ln -s $dir/sxhkd ~/.config/sxhkd
