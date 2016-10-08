@@ -3,8 +3,8 @@
 sxhkd &
 unclutter &
 exec ~/.fehbg &
-panel &
-compton -b --no-fading-openclose
+compton -b --config ~/.config/compton.conf
+xmodmap ~/.Xmodmap
 
 bspc config border_width         2
 bspc config window_gap           0
@@ -19,7 +19,8 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc rule -a Gimp desktop=^8 state=floating follow=on
 bspc rule -a Firefox desktop=^9
-bspc rule -a Emacs desktop=^2
-bspc rule -a mpv state=floating
+bspc rule -a Emacs desktop=^2 state=tiled
+bspc rule -a Zathura state=tiled
+# bspc rule -a mpv state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off

@@ -59,3 +59,6 @@ ln -s $dir/bspwm ~/.config/bspwm
 
 mv ~/.config/sxhkd $olddir
 ln -s $dir/sxhkd ~/.config/sxhkd
+
+mv ~/.Xresources $olddir
+ln -s $dir/Xresources ~/.Xresources 

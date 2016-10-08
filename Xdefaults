@@ -33,35 +33,35 @@ URxvt.iso14755_52: false
 !urxvt color scheme:
 
 *foreground: #FFFFFF
-*background: #222425
+*background: #262c34
 
 ! black
 *.color0:       #000000
-*.color8:       #39393D
+*.color8:       #20272e
 
 ! red
-*.color1:       #E74C3C
-*.color9:       #E74C3C
+*.color1:       #FF665c
+*.color9:       #FF665c
 
 ! green
-*.color2:       #B6B20E
-*.color10:      #B6B20E
+*.color2:       #86B20E
+*.color10:      #86B20E
 
 ! yellow
-*.color3:       #E2C770
-*.color11:      #E2C770
+*.color3:       #ECBE7B
+*.color11:      #ECBE7B
 
 ! blue
-*.color4:       #FD971F
-*.color12:      #FD971F
+*.color4:       #00B3EF
+*.color12:      #00B3EF
 
 ! magenta
-*.color5:       #F92672
-*.color13:      #F92672
+*.color5:       #DC79DC
+*.color13:      #DC79DC
 
 ! cyan
-*.color6:       #66D9EF
-*.color14:      #66D9EF
+*.color6:       #46D9FF
+*.color14:      #46D9FF
 
 ! white
 *.color7:       #EAEADB
