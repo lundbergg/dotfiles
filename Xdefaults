@@ -3,37 +3,39 @@
 URxvt*geometry:		115x40
 URxvt*font:			xft:Office Code Pro:pixelsize=11:antialias=true:hinting=true
 URxvt*boldFont: 	xft:Office Code Pro:bold:pixelsize=11:antialias=false:hinting=true
-!URxvt*depth:   		32
+! URxvt*font:		xft:Fira Mono:pixelsize=11:antialias=true:hinting=true
+! URxvt*boldFont: 	xft:Fira Mono:bold:pixelsize=11:antialias=false:hinting=true
+!URxvt*depth:   	32
 URxvt*borderless: 	1
 URxvt*scrollBar:   	false
-URxvt*saveLines:		2000
+URxvt*saveLines:	2000
 URxvt.transparent:  false
-URxvt*.shading: 		10
+URxvt*.shading: 	10
 
 ! Clickable URL's
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:     /usr/bin/firefox
+URxvt.matcher.button:   1
 
 ! Yankable URL's
-URxvt.perl-ext: default,url-select
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.perl-ext:             default,url-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
 
-URxvt.keysym.Control-Up:   \033[1;5A
-URxvt.keysym.Control-Down:    \033[1;5B
-URxvt.keysym.Control-Left:    \033[1;5D
-URxvt.keysym.Control-Right:    \033[1;5C
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
 
 ! disable the stupid ctrl+shift 'feature'
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+URxvt.iso14755:      false
+URxvt.iso14755_52:   false
 
 !urxvt color scheme:
 
-*foreground: #FFFFFF
-*background: #262c34
+*foreground:    #FFFFFF
+*background:    #262c34
 
 ! black
 *.color0:       #000000
@@ -67,7 +69,4 @@ URxvt.iso14755_52: false
 *.color7:       #EAEADB
 *.color15:      #EAEADB
 
-!URxvt*borderColor:        #151515
-! URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #FD971F
-! URxvt*cursorColor2:       #151515
