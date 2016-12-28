@@ -85,7 +85,7 @@ export VISUAL='emacsclient'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c='clear'
 alias df='df -h'
-alias feh='feh -Zp.'
+# alias feh='feh -ZXr.'
 alias gitg='git log --graph --pretty=oneline --abbrev-commit'
 alias grep='grep --color=auto'
 # alias i3lock='i3lock -d -c 000000'

@@ -7,7 +7,7 @@ URxvt*boldFont: 	xft:Office Code Pro:bold:pixelsize=11:antialias=false:hinting=t
 URxvt*borderless: 	1
 URxvt*scrollBar:   	false
 URxvt*saveLines:		2000
-URxvt.transparent:  false
+URxvt.transparent:  true
 URxvt*.shading: 		10
 
 ! Clickable URL's
