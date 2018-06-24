@@ -58,6 +58,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export PATH="$PATH:$HOME/.bin"
 # export PATH="$HOME/.bin:/usr/lib/hardening-wrapper/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
 # Preferred editor for local and remote sessions
@@ -83,9 +84,10 @@ export VISUAL='emacsclient'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias bat='upower -d'
 alias c='clear'
 alias df='df -h'
-alias feh='feh -Zp.'
+# alias feh='feh -Zp.'
 alias gitg='git log --graph --pretty=oneline --abbrev-commit'
 alias grep='grep --color=auto'
 # alias i3lock='i3lock -d -c 000000'
@@ -123,4 +125,4 @@ bindkey ';5C' emacs-forward-word
 bindkey -M emacs '^[[3^' kill-word
 
 # Syntax Highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
