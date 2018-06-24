@@ -6,8 +6,11 @@ exec ~/.fehbg &
 compton -b --config ~/.config/compton/compton.conf
 xmodmap ~/.Xmodmap
 
+# MPD daemon start (if no other user instance exists)
+[ ! -s ~/.config/mpd/pid ] && mpd
+
 bspc config border_width         0
-bspc config window_gap           0
+bspc config window_gap           15
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -21,6 +24,7 @@ bspc rule -a Gimp desktop=^8 state=floating follow=on
 bspc rule -a Firefox desktop=^9
 bspc rule -a Emacs desktop=^2 state=tiled
 bspc rule -a Zathura state=tiled
+bspc rule -a feh state=floating
 # bspc rule -a mpv state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off

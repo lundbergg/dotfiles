@@ -133,6 +133,18 @@ super + alt + shift + {Left,Down,Up,Right}
 super + {Left,Down,Up,Right}
 	xdo move {-x -20,-y +20,-y -20,-x +20}
 
+# restore window gap
+super + shift + minus
+      bspc config window_gap 0
+
+# increase window gap
+super + plus
+      bspc config -d focused window_gap $((`bspc config -d focused window_gap` +5 ))
+
+# decrease window gap
+super + minus
+      bspc config -d focused window_gap $((`bspc config -d focused window_gap` -5 ))
+
 #
 # pointer focus/move/resize
 #
@@ -163,3 +175,19 @@ XF86AudioMute
 
 XF86Display
 	xrandr --output LVDS1 --off; xrandr --output LVDS1 --auto
+
+XF86AudioNext
+	mpc next || playerctl next
+
+XF86AudioPrev
+	mpc prev || playerctl previous
+
+XF86AudioPlay
+	mpc toggle || playerctl play-pause
+
+#
+# Misc
+#
+
+super + F11
+      mpv ($xsel)
