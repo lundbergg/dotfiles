@@ -1,24 +1,48 @@
 ! urxvt
 
+!--------------------
+! Window
+!--------------------
 URxvt*geometry:		115x40
-! URxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
-URxvt*font:			xft:Office Code Pro:pixelsize=13:antialias=true:hinting=true
-URxvt*boldFont: 	xft:Office Code Pro:bold:pixelsize=13:antialias=false:hinting=true
-! URxvt*font:		xft:Fira Mono:pixelsize=11:antialias=true:hinting=true
-! URxvt*boldFont: 	xft:Fira Mono:bold:pixelsize=11:antialias=false:hinting=true
-!URxvt*depth:   	32
 URxvt*borderless: 	1
+URxvt*internalBorder:  6
 URxvt*scrollBar:   	false
 URxvt*saveLines:	2000
-URxvt.transparent:  true
-URxvt*.shading: 	10
-! URxvt.letterSpace: -1
+
+!--------------------
+! Font
+!--------------------
+! URxvt*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
+URxvt*font:			xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true \
+URxvt*font:			xft:Droid Sans:pixelsize=13:antialias=true:hinting=true
+URxvt*boldFont: 	xft:Source Code Pro:bold:pixelsize=13:antialias=false:hinting=true
+! URxvt*font:		xft:DejaVu Sans:pixelsize=11:antialias=true:hinting=true
+! URxvt*boldFont: 	xft:DejaVu Sans:bold:pixelsize=11:antialias=false:hinting=true
+
+! URxvt*letterSpace: -1
 URxvt*skipBuiltinGlyphs: true
 
+
+!--------------------
+! True Transparancy
+!--------------------
+URxvt*depth:   	    32
+URxvt*background:  	[70]#000000
+URxvt*background:  	rgba:0000/0000/0000/b332
+
+!--------------------
+! Native Transparancy
+!--------------------
+! URxvt*transparent:  true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+! URxvt*.shading: 	40
+
+
 ! Clickable URL's
-URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:     /usr/bin/firefox
-URxvt.matcher.button:   1
+URxvt*perl-ext-common:  default,matcher
+URxvt*url-launcher:     /usr/bin/firefox
+URxvt*matcher.button:   1
+URxvt.matcher.rend.0: Uline Bold fg5
 
 ! Yankable URL's
 ! URxvt.perl-ext:             default,url-select
@@ -26,96 +50,54 @@ URxvt.matcher.button:   1
 ! URxvt.url-select.launcher:  /usr/bin/xdg-open
 ! URxvt.url-select.underline: true
 
-URxvt.keysym.Control-Up:    \033[1;5A
-URxvt.keysym.Control-Down:  \033[1;5B
-URxvt.keysym.Control-Left:  \033[1;5D
-URxvt.keysym.Control-Right: \033[1;5C
+URxvt*keysym.Control-Up:    \033[1;5A
+URxvt*keysym.Control-Down:  \033[1;5B
+URxvt*keysym.Control-Left:  \033[1;5D
+URxvt*keysym.Control-Right: \033[1;5C
 
 ! disable the stupid ctrl+shift 'feature'
-URxvt.iso14755:      false
-URxvt.iso14755_52:   false
+URxvt*iso14755:      false
+URxvt*iso14755_52:   false
 
-! OLD
-! !urxvt color scheme:
+!--------------------
+! Color Scheme:
+!--------------------
 
-! *.background:  #11131A
-! *.foreground:  #ffffff
-! *.cursorColor: #555555
-! !
-! ! Black
-! *.color0:      #000000
-! *.color8:      #000000
-! !
-! ! Red
-! *.color1:      #de3e35
-! *.color9:      #de3e35
-! !
-! ! Green
-! *.color2:      #3f953a
-! *.color10:     #3f953a
-! !
-! ! Yellow
-! *.color3:      #d2b67c
-! *.color11:     #d2b67c
-! !
-! ! Blue
-! *.color4:      #2f5af3
-! *.color12:     #2f5af3
-! !
-! ! Magenta
-! *.color5:      #950095
-! *.color13:     #a00095
-! !
-! ! Cyan
-! *.color6:      #3f953a
-! *.color14:     #3f953a
-! !
-! ! White
-! *.color7:      #bbbbbb
-! *.color15:     #ffffff
-! !
-! ! Bold, Italic, Underline
-! ! *.colorBD:     #000000
-! *.colorBD:     #EEEEEE
-
-
-!urxvt color scheme:
-
-*.background:  #21242b
+*.background:  #07080d
 *.foreground:  #bbc2cf
 *.cursorColor: #4db5bd
-!
+
 ! Black
 *.color0:      #181e26
 *.color8:      #181e26
-!
+
 ! Red
 *.color1:      #ff6c6b
 *.color9:      #ff6c6b
-!
+
 ! Green
 *.color2:      #98be65
 *.color10:     #98be65
-!
+
 ! Yellow
 *.color3:      #cdb464
 *.color11:     #ecbe7b
-!
+
 ! Blue
 *.color4:      #1f5582
 *.color12:     #51afef
-!
+
 ! Magenta
 *.color5:      #c678dd
 *.color13:     #a9a1a1
-!
+
 ! Cyan
 *.color6:      #5699af
 *.color14:     #46d9ff
-!
+
 ! White
 *.color7:      #5b6268
 *.color15:     #dfdfdf
-!
+
 ! Bold, Italic, Underline
 ! *.colorBD:     #000000

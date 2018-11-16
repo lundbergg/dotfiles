@@ -2,12 +2,15 @@
 #export ZSH=/home/dennis/.oh-my-zsh
 export ZSH=/usr/share/oh-my-zsh
 
+# Workaround because of problems with oh-my-zsh cache not being writable
+ZSH_CACHE_DIR="/tmp/zsh_cache"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="garyblessington"
-#ZSH_THEME="af-magic"
+# ZSH_THEME="agnoster"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -58,7 +61,9 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export PATH="$PATH:$HOME/.bin"
+export PATH="$HOME/.bin:$PATH"
+# Allow ruby gems to be executed
+export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 # export PATH="$HOME/.bin:/usr/lib/hardening-wrapper/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
 # Preferred editor for local and remote sessions
@@ -82,25 +87,26 @@ export VISUAL='emacsclient'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias bat='upower -d'
 alias c='clear'
 alias df='df -h'
-# alias feh='feh -Zp.'
+alias feh='feh -Zp.'
 alias gitg='git log --graph --pretty=oneline --abbrev-commit'
 alias grep='grep --color=auto'
-# alias i3lock='i3lock -d -c 000000'
 alias ls='ls --color=auto -pl'
-alias mkdir='mkdir -p -v'
+alias mkdir='mkdir -pv'
 alias mv='timeout 8 mv -iv'
-alias pmc='sudo pacman -Rsn $(pacman -Qdtq)'
 alias rm='timeout 3 rm -Iv --one-file-system'
 alias savescreen='xrandr --output LVDS1 --off; xrandr --output LVDS1 --auto'
 alias x='chmod u+x'
 
-# ls colors
-# eval $(dircolors -b $HOME/.dircolors)
+# Wine aliases
+alias wine='FREETYPE_PROPERTIES="truetype:interpreter-version=35" wine'
+alias japlocale='LC_ALL=ja_JP.UTF-8'
+alias japwine='LC_ALL=ja_JP.UTF-8 FREETYPE_PROPERTIES="truetype:interpreter-version=35" wine'
+alias 32prefix='WINEPREFIX=~/.wine32'
+
+# Functions
 
 # less colors
 export LESS=-R
@@ -125,4 +131,4 @@ bindkey ';5C' emacs-forward-word
 bindkey -M emacs '^[[3^' kill-word
 
 # Syntax Highlighting
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

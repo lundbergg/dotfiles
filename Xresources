@@ -1,5 +1,5 @@
 ! ==============================================================================
-! ROFI 
+! ROFI
 ! ==============================================================================
 rofi.opacity: 100
 rofi.width: 1280
@@ -20,6 +20,7 @@ rofi.terminal: urxvt
 rofi.hide-scrollbar: true
 rofi.sidebar-mode: true
 rofi.fullscreen: true
+rofi.show_icons: true
 
 ! --------------------------------------
 ! ROFI Color theme

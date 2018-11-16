@@ -81,6 +81,7 @@ case "$extension" in
     pdf)
         try pdftotext -l 10 -nopgbrk -q "$path" - && \
             { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+        # convert "$path[0]" "$cached" && exit 6 || exit 1;;
     # BitTorrent Files
     torrent)
         try transmission-show "$path" && { dump | trim; exit 5; } || exit 1;;
@@ -88,11 +89,16 @@ case "$extension" in
     odt|ods|odp|sxw)
         try odt2txt "$path" && { dump | trim; exit 5; } || exit 1;;
     # HTML Pages:
-    htm|html|xhtml)
-        try w3m    -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
-        try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
-        try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
-        ;; # fall back to highlight/cat if the text browsers fail
+    # htm|html|xhtml)
+        # try w3m    -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
+        # try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
+        # try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
+        # ;; # fall back to highlight/cat if the text browsers fail
+    # Comic Books
+    cbz|cbr)
+        try cb_thumbnailer "$path" "$cached" && exit 6 || exit 1;;
+    webm|mkv)
+        ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
 esac
 
 case "$mimetype" in
@@ -113,6 +119,7 @@ case "$mimetype" in
         img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
     # Image preview for videos, disabled by default:
     video/*)
+        convert "$(dirname "$path")/screens/$(basename "$path").jpg" "$cached" && exit 6 || \
         ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
     # Display information about media files:
     video/* | audio/*)

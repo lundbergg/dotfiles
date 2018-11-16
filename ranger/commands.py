@@ -5,10 +5,10 @@
 # commands when upgrading ranger.
 
 # You always need to import ranger.api.commands here to get the Command class:
-from ranger.api.commands import *
+from ranger.api.commands import Command
 
 # A simple command for demonstration purposes follows.
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # You can import any python module as needed.
 import os
@@ -16,6 +16,8 @@ from ranger.core.loader import CommandLoader
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
+
+
 class my_edit(Command):
     # The so-called doc-string of the class will be visible in the built-in
     # help that is accessible by typing "?c" inside ranger.
@@ -58,7 +60,50 @@ class my_edit(Command):
         # content of the current directory.
         return self._tab_directory_content()
 
-      
+
+# The following command implements zip compression by copying (yy) one or more
+# files or directories and then executing :zip with the desired output name.
+class zip(Command):
+    def execute(self):
+        """ Zip copied files to given output file """
+        copied_files = tuple(self.fm.copy_buffer)
+        target_filename = self.rest(1)
+
+        if not copied_files:
+            return
+
+        if os.path.exists(target_filename):
+            self.fm.notify("Output file already exists!", bad=True)
+            return
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        one_file = copied_files[0]
+        cwd = self.fm.thisdir
+        original_path = cwd.path
+        zip_flags = ['-r']
+        zip_flags += [target_filename]
+
+        self.fm.copy_buffer.clear()
+        self.fm.cut_buffer = False
+        if len(copied_files) == 1:
+            descr = "zipping: " + os.path.basename(one_file.path)
+        else:
+            descr = "zipping files from: " + \
+                os.path.basename(one_file.dirname)
+        obj = CommandLoader(args=['zip'] + zip_flags
+                            + [f.path for f in copied_files], descr=descr)
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
+
+    def tab(self):
+        extension = ['.zip', '.cbz']
+        return ['zip ' + os.path.basename(self.fm.thisdir.path) +
+                ext for ext in extension]
+
 # The following command implements archive extraction by copying (yy) one or
 # more archive files and then executing :extracthere on the desired directory.
 class extracthere(Command):
@@ -85,9 +130,43 @@ class extracthere(Command):
         if len(copied_files) == 1:
             descr = "extracting: " + os.path.basename(one_file.path)
         else:
-            descr = "extracting files from: " + os.path.basename(one_file.dirname)
-        obj = CommandLoader(args=['aunpack'] + au_flags \
-                + [f.path for f in copied_files], descr=descr)
+            descr = "extracting files from: " + \
+                os.path.basename(one_file.dirname)
+        obj = CommandLoader(args=['aunpack'] + au_flags
+                            + [f.path for f in copied_files], descr=descr)
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
+
+
+class mkcd(Command):
+    """
+    :mkcd <dirname>
+
+    Creates a directory with the name <dirname> and enters it.
+    """
+
+    def execute(self):
+        from os.path import join, expanduser, lexists
+        from os import makedirs
+        import re
+
+        dirname = join(self.fm.thisdir.path, expanduser(self.rest(1)))
+        if not lexists(dirname):
+            makedirs(dirname)
+
+            match = re.search('^/|^~[^/]*/', dirname)
+            if match:
+                self.fm.cd(match.group(0))
+                dirname = dirname[match.end(0):]
+
+            for m in re.finditer('[^/]+', dirname):
+                s = m.group(0)
+                if s == '..' or (s.startswith('.') and not self.fm.settings['show_hidden']):
+                    self.fm.cd(s)
+                else:
+                    ## We force ranger to load content before calling `scout`.
+                    self.fm.thisdir.load_content(schedule=False)
+                    self.fm.execute_console('scout -ae ^{}$'.format(s))
+        else:
+            self.fm.notify("file/directory exists!", bad=True)

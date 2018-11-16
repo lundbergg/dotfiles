@@ -61,7 +61,7 @@ mv ~/.config/sxhkd $olddir
 ln -s $dir/sxhkd ~/.config/sxhkd
 
 mv ~/.Xresources $olddir
-ln -s $dir/Xresources ~/.Xresources 
+ln -s $dir/Xresources ~/.Xresources
 
 mv ~/.config/compton $olddir
 ln -s $dir/compton ~/.config/compton
