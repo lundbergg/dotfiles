@@ -13,13 +13,13 @@ URxvt*saveLines:	2000
 ! Font
 !--------------------
 ! URxvt*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
-URxvt*font:			xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true \
+URxvt*font:			xft:Iosevka:pixelsize=14:antialias=true:hinting=true \
 URxvt*font:			xft:Droid Sans:pixelsize=13:antialias=true:hinting=true
-URxvt*boldFont: 	xft:Source Code Pro:bold:pixelsize=13:antialias=false:hinting=true
+URxvt*boldFont: 	xft:Iosevka:bold:pixelsize=14:antialias=false:hinting=true
 ! URxvt*font:		xft:DejaVu Sans:pixelsize=11:antialias=true:hinting=true
 ! URxvt*boldFont: 	xft:DejaVu Sans:bold:pixelsize=11:antialias=false:hinting=true
 
-! URxvt*letterSpace: -1
+URxvt*letterSpace: 1
 URxvt*skipBuiltinGlyphs: true
 
 
@@ -27,20 +27,20 @@ URxvt*skipBuiltinGlyphs: true
 ! True Transparancy
 !--------------------
 URxvt*depth:   	    32
-URxvt*background:  	[70]#000000
-URxvt*background:  	rgba:0000/0000/0000/b332
+URxvt*background:  	[80]#000000
+! URxvt*background:  	rgba:0000/0000/0000/b332
 
 !--------------------
 ! Native Transparancy
 !--------------------
 ! URxvt*transparent:  true
 ! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
-! URxvt*.shading: 	40
+! URxvt*.shading: 	29
 
 
 ! Clickable URL's
 URxvt*perl-ext-common:  default,matcher
-URxvt*url-launcher:     /usr/bin/firefox
+URxvt*url-launcher:     /usr/bin/xdg-open
 URxvt*matcher.button:   1
 URxvt.matcher.rend.0: Uline Bold fg5
 
@@ -63,41 +63,41 @@ URxvt*iso14755_52:   false
 ! Color Scheme:
 !--------------------
 
-*.background:  #07080d
-*.foreground:  #bbc2cf
-*.cursorColor: #4db5bd
+*.background:  #1d2021
+*.foreground:  #fdf4c1
+*.cursorColor: #fdf4c1
 
 ! Black
 *.color0:      #181e26
 *.color8:      #181e26
 
 ! Red
-*.color1:      #ff6c6b
-*.color9:      #ff6c6b
+*.color1:      #fb4933
+*.color9:      #fb4933
 
 ! Green
-*.color2:      #98be65
-*.color10:     #98be65
+*.color2:      #b8bb26
+*.color10:     #b8bb26
 
 ! Yellow
-*.color3:      #cdb464
-*.color11:     #ecbe7b
+*.color3:      #ffaf00
+*.color11:     #fabd2f
 
 ! Blue
-*.color4:      #1f5582
-*.color12:     #51afef
+*.color4:      #458588
+*.color12:     #87afaf
 
 ! Magenta
-*.color5:      #c678dd
-*.color13:     #a9a1a1
+*.color5:      #d787af
+*.color13:     #d3869b
 
 ! Cyan
-*.color6:      #5699af
-*.color14:     #46d9ff
+*.color6:      #66999d
+*.color14:     #5fafaf
 
 ! White
-*.color7:      #5b6268
-*.color15:     #dfdfdf
+*.color7:      #8a8a8a
+*.color15:     #ffffd7
 
 ! Bold, Italic, Underline
 ! *.colorBD:     #000000
